@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Director — Creative Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Inter, sans-serif;
+background:linear-gradient(135deg,#05060f,#0f1633,#020203);
+color:white;
+overflow-x:hidden;
+}
+
+header{
+padding:50px 20px;
+text-align:center;
+background:linear-gradient(90deg,#ff0055,#7700ff,#00d4ff);
+background-size:400% 400%;
+animation:gradientMove 10s infinite alternate;
+}
+
+@keyframes gradientMove{
+0%{background-position:0%}
+100%{background-position:100%}
+}
+
+header h1{
+font-family:Orbitron;
+font-size:40px;
+margin:0;
+letter-spacing:2px;
+}
+
+header p{opacity:.85}
+
+nav{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+padding:25px;
+}
+
+nav button{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.15);
+color:white;
+padding:12px 22px;
+font-size:14px;
+letter-spacing:1px;
+cursor:pointer;
+backdrop-filter:blur(8px);
+transition:all .3s;
+border-radius:10px;
+}
+
+nav button:hover{
+background:linear-gradient(45deg,#ff00cc,#00d4ff);
+transform:scale(1.08);
+}
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+display:none;
+animation:fade .6s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1}
+}
+
+.active{display:block}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.12);
+padding:25px;
+border-radius:14px;
+transition:.35s;
+position:relative;
+overflow:hidden;
+}
+
+.card:before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.15),transparent);
+opacity:0;
+transition:.4s;
+}
+
+.card:hover:before{opacity:1}
+
+.card:hover{
+transform:translateY(-6px) scale(1.03);
+border-color:#00eaff;
+}
+
+h2{
+font-family:Orbitron;
+margin-top:0;
+letter-spacing:1px;
+}
+
+.highlight{
+background:linear-gradient(90deg,#ff00cc,#00eaff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+footer{
+text-align:center;
+padding:50px;
+opacity:.6;
+font-size:14px;
+}
+
+.hero{
+text-align:center;
+max-width:800px;
+margin:auto;
+}
+
+.hero h2{
+font-size:32px
+}
+
+.badge{
+display:inline-block;
+padding:6px 10px;
+border-radius:6px;
+font-size:12px;
+background:linear-gradient(45deg,#ff00cc,#00d4ff);
+margin-top:8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Director Portfolio</h1>
+<p>Cinematic storytelling • Visual worlds • Film direction</p>
+</header>
+
+<nav>
+<button onclick="showSection('home')">Home</button>
+<button onclick="showSection('films')">Films</button>
+<button onclick="showSection('inspiration')">Inspirations</button>
+<button onclick="showSection('about')">About Me</button>
+<button onclick="showSection('contact')">Contact</button>
+</nav>
+
+<div id="home" class="section active">
+
+<div class="hero">
+<h2 class="highlight">Creating cinematic universe
